@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icons a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.5rem;
+            margin-left: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .header-icons a:hover {
+            color: #666;
+        }
+
+        .tab {
+            display: none;
+            overflow-y: auto;
+            max-height: calc(100% - 70px); /* altura máxima menos a altura do cabeçalho */
+            width: 100%;
+        }
+
+        .item-carrinho {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Adiciona um espaçamento entre os itens do carrinho */
+        }
+
+        .item-carrinho img {
+            max-width: 80px; /* Ajuste conforme necessário */
+            height: auto;
+            margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+        }
+
+        .item-carrinho button {
+            margin-left: 10px; /* Espaçamento entre o texto e o botão */
+        }
+
+        #carrinho-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            min-height: calc(100% - 120px); /* altura da tela menos a altura do cabeçalho e um espaço adicional */
+            padding-top: 125px; /* Espaçamento superior ajustado */
+        }
+        
+    </style>
+    <title>Fones de Ouvidos</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class='bx bx-headphone'></i>Soundbox</a>
+    
+        <ul class="navegacao">
+            <li><a href="#" class="tab-link" onclick="openTab('home-tab')"><i class='bx bx-home'></i>HOME</a></li>
+            <li><a href="#" class="tab-link" onclick="openTab('menu-tab')"><i class='bx bx-info-circle'></i>PRODUTOS</a></li>
+            <li><a href="#" class="tab-link" onclick="openTab('contact-tab')"><i class='bx bx-phone'></i>CONTATO</a></li>
+        </ul><!--navegacao-->
+    
+        <div class="header-icons">
+            <!-- Ícones dos produtos -->
+            <a href="#" class="cart-tab" onclick="openTab('carrinho-tab')"><i class='bx bx-cart'></i></a>
+        </div><!--header-icons-->
+    </header>
+    
+    <section id="home-tab" class="tab" style="display: block;">
+        <!-- Conteúdo da página inicial -->
+        <div class="home">
+            <div class="home-img">
+                <img src="product1.png" class="one">
+            </div><!--home-img-->
+
+            <div class="home-text">
+                <h1>Wireless <br> Headphones</h1>
+                <h5>The smarter way to listen</h5>
+                <h3>$199.00</h3>
+                <button onclick="adicionarAoCarrinho('product1.png', 'Wireless Headphones', 199)" class="btn">Adicionar ao Carrinho</button>
+            </div><!--home-text-->
+        </div><!--home-->
+
+        <div class="main">
+           
+            
+        </div><!--main-->
+    </section>
+
+    <div id="carrinho-tab" class="tab" style="display: none;">
+        <!-- Conteúdo do carrinho -->
+        <h2>Carrinho</h2>
+        <div id="carrinho-itens"></div>
+        <p><strong>Total: $<span id="total-carrinho">0.00</span></strong></p>
+        <button onclick="finalizarCompra()" class="btn-finalizar">Finalizar Compra</button>
+    </div>
+
+    <div id="menu-tab" class="tab" style="display: none;">
+        <!-- Conteúdo do menu -->
+        <h2 class="titulo-produtos">Nossos Produtos</h2>
+        <div class="menu-produtos">
+            <!-- Produto 1 -->
+            <div class="produto">
+                <img src="product2.png" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>$100.00</p>
+                <button onclick="adicionarAoCarrinho('product2.png', 'Produto 1', 100)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+        
+            <!-- Produto 2 -->
+            <div class="produto">
+                <img src="product3.png" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>$150.00</p>
+                <button onclick="adicionarAoCarrinho('product3.png', 'Produto 2', 150)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+        
+            <!-- Produto 3 -->
+            <div class="produto">
+                <img src="produto44.png" alt="Produto 3">
+                <h3>Produto 3</h3>
+                <p>$80.00</p>
+                <button onclick="adicionarAoCarrinho('produto44.png', 'Produto 3', 80)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+        
+            <!-- Produto 4 -->
+            <div class="produto">
+                <img src="produto33.png" alt="Produto 4">
+                <h3>Produto 4</h3>
+                <p>$120.00</p>
+                <button onclick="adicionarAoCarrinho('produto33.png', 'Produto 4', 120)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="produto">
+                <img src="produto7.png" alt="Produto 6">
+                <h3>Produto 6</h3>
+                <p>$200.00</p>
+                <button onclick="adicionarAoCarrinho('produto44.png', 'Produto 6', 200)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 7 -->
+            <div class="produto">
+                <img src="produto10.png" alt="Produto 7">
+                <h3>Produto 7</h3>
+                <p>$50.00</p>
+                <button onclick="adicionarAoCarrinho('produto10.png', 'Produto 7', 50)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+            
+            <!-- Produto 8 -->
+            <div class="produto">
+                <img src="produto9.png" alt="Produto 8">
+                <h3>Produto 8</h3>
+                <p>$110.00</p>
+                <button onclick="adicionarAoCarrinho('produto9.png', 'Produto 8', 110)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+            
+            <!-- Produto 9 -->
+            <div class="produto">
+                <img src="produto11.png" alt="Produto 9">
+                <h3>Produto 9</h3>
+                <p>$95.00</p>
+                <button onclick="adicionarAoCarrinho('produto11.png', 'Produto 9', 95)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+            
+            <!-- Produto 10 -->
+            <div class="produto">
+                <img src="produto6.png" alt="Produto 10">
+                <h3>Produto 10</h3>
+                <p>$85.00</p>
+                <button onclick="adicionarAoCarrinho('produto6.png', 'Produto 10', 85)" class="btn">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-tab" class="tab" style="display: none;">
+        <!-- Conteúdo de contato -->
+        <div class="contact-container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-icons">
+                <!-- Ícones de redes sociais -->
+                <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <!-- Ícone de informações de contato -->
+                <div class="contact-info">
+                    <p>Entre em contato: Email: seu_email@example.com Telefone: +XX XXXX-XXXX </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function slider(anything) {
+            document.querySelector('.one').src = anything;
+        }
+
+        function openTab(tabName) {
+            var tabs = document.querySelectorAll('.tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        function adicionarAoCarrinho(imagem, nome, preco) {
+            var carrinhoItens = document.getElementById('carrinho-itens');
+            var itemCarrinho = document.createElement('div');
+            itemCarrinho.classList.add('item-carrinho');
+            itemCarrinho.innerHTML = `
+                <img src="${imagem}" alt="${nome}">
+                <p>${nome} - $${preco.toFixed(2)}</p>
+                <button onclick="removerDoCarrinho(this)" class="btn-remover">Remover</button>
+            `;
+            carrinhoItens.appendChild(itemCarrinho);
+
+            // Atualizar total do carrinho
+            var totalCarrinho = document.getElementById('total-carrinho');
+            var totalAtual = parseFloat(totalCarrinho.innerText);
+            totalAtual += preco;
+            totalCarrinho.innerText = totalAtual.toFixed(2);
+        }
+
+        function removerDoCarrinho(button) {
+            var itemCarrinho = button.parentElement;
+            var precoTexto = itemCarrinho.querySelector('p').innerText;
+            var preco = parseFloat(precoTexto.match(/\d+\.\d+/)[0]);
+            var totalCarrinho = document.getElementById('total-carrinho');
+            var totalAtual = parseFloat(totalCarrinho.innerText);
+            totalAtual -= preco;
+            totalCarrinho.innerText = totalAtual.toFixed(2);
+            itemCarrinho.remove();
+        }
+
+        function finalizarCompra() {
+    // Limpar a lista de itens do carrinho
+    var carrinhoItens = document.getElementById('carrinho-itens');
+    carrinhoItens.innerHTML = '';
+
+    // Resetar o total do carrinho
+    var totalCarrinho = document.getElementById('total-carrinho');
+    totalCarrinho.innerText = '0.00';
+
+    alert("Compra finalizada!");
+
+    // Fechar a aba do carrinho após finalizar a compra (opcional)
+    openTab('home-tab'); // Altere para a aba que desejar exibir após finalizar a compra
+}
+
+    </script>
+</body>
+</html>
